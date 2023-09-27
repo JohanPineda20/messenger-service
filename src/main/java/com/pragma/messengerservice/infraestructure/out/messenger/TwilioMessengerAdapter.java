@@ -13,7 +13,6 @@ public class TwilioMessengerAdapter implements IMessageMessengerPort {
     private String TWILIO_AUTH_TOKEN;
     @Value("TWILIO_PHONE_NUMBER")
     private String TWILIO_PHONE_NUMBER;
-
     @Override
     public void sendMessage(MessageModel messageModel) {
         Twilio.init(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
