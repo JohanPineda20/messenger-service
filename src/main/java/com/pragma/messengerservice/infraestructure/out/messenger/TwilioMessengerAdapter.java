@@ -7,11 +7,11 @@ import com.twilio.rest.api.v2010.account.Message;
 import org.springframework.beans.factory.annotation.Value;
 
 public class TwilioMessengerAdapter implements IMessageMessengerPort {
-    @Value("TWILIO_ACCOUNT_SID")
+    @Value("${TWILIO_ACCOUNT_SID}")
     private String TWILIO_ACCOUNT_SID;
-    @Value("TWILIO_AUTH_TOKEN")
+    @Value("${TWILIO_AUTH_TOKEN}")
     private String TWILIO_AUTH_TOKEN;
-    @Value("TWILIO_PHONE_NUMBER")
+    @Value("${TWILIO_PHONE_NUMBER}")
     private String TWILIO_PHONE_NUMBER;
     @Override
     public void sendMessage(MessageModel messageModel) {
