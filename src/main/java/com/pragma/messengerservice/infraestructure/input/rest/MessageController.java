@@ -36,7 +36,7 @@ public class MessageController {
     })
     @SecurityRequirement(name = "jwt")
     @PostMapping
-    @PreAuthorize("hasAuthority('EMPLOYEE')")
+    @PreAuthorize("hasAnyAuthority({'EMPLOYEE','CUSTOMER'})")
     public ResponseEntity<Void> sendMessage(@Valid @RequestBody MessageRequest messageRequest){
         messageHandler.sendMessage(messageRequest);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
